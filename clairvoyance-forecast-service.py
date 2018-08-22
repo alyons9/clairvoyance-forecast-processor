@@ -11,11 +11,11 @@ settings = {
 
 c = Consumer(settings)
 
-c.subscribe(['forecastData-out'])
+c.subscribe(['forecast'])
 
 try:
     while True:
-        msg = c.poll(0.1)
+        msg = c.poll(0)
         if msg is None:
             continue
         elif not msg.error():
